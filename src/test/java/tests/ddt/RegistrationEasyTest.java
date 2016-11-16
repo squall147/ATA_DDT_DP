@@ -1,4 +1,4 @@
-package tests;
+package tests.ddt;
 
 import org.easetech.easytest.annotation.DataLoader;
 import org.easetech.easytest.annotation.Param;
@@ -15,21 +15,22 @@ import page.HomePage;
 import page.LoginPage;
 import page.RegistrationConfirmationPage;
 import page.RegistrationPage;
+import utils.UrlProvider;
 
 import static org.junit.Assert.assertTrue;
 
 @RunWith(DataDrivenTestRunner.class)
 @DataLoader(filePaths = { "src/test/resources/registration.xml" },
 		loaderType = LoaderType.XML, writeData = false)
-public class RegistrationDDTTest {
-
-	private static final String PAGE_URL = "http://newtours.demoaut.com";
+public class RegistrationEasyTest {
 
 	private WebDriver driver;
 	private HomePage homePage;
 	private RegistrationPage registrationPage;
 	private RegistrationConfirmationPage registrationConfirmationPage;
 	private LoginPage loginPage;
+
+	private String url;
 
 	@Before
 	public void setUp() {
@@ -40,8 +41,10 @@ public class RegistrationDDTTest {
 				RegistrationPage.class);
 		registrationConfirmationPage = PageFactory.initElements(driver,
 				RegistrationConfirmationPage.class);
-		loginPage = PageFactory.initElements(driver, LoginPage.class);
-		driver.get(PAGE_URL);
+        loginPage = PageFactory.initElements(driver, LoginPage.class);
+
+		url = UrlProvider.PAGE_URL.getUrl();
+		driver.get(url);
 	}
 
 	@After

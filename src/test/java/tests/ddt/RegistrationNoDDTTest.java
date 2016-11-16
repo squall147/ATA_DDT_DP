@@ -1,4 +1,4 @@
-package tests;
+package tests.ddt;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,18 +10,19 @@ import page.HomePage;
 import page.LoginPage;
 import page.RegistrationConfirmationPage;
 import page.RegistrationPage;
+import utils.UrlProvider;
 
 import static org.junit.Assert.assertTrue;
 
 public class RegistrationNoDDTTest {
-
-	private static final String PAGE_URL = "http://newtours.demoaut.com";
 
 	private WebDriver driver;
 	private HomePage homePage;
 	private RegistrationPage registrationPage;
 	private RegistrationConfirmationPage registrationConfirmationPage;
 	private LoginPage loginPage;
+
+	private String url;
 
 	@Before
 	public void setUp() {
@@ -33,7 +34,9 @@ public class RegistrationNoDDTTest {
 		registrationConfirmationPage = PageFactory.initElements(driver,
 				RegistrationConfirmationPage.class);
 		loginPage = PageFactory.initElements(driver, LoginPage.class);
-		driver.get(PAGE_URL);
+
+		url = UrlProvider.PAGE_URL.getUrl();
+		driver.get(url);
 	}
 
 	@After
