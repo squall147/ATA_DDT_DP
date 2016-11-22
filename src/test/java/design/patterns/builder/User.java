@@ -19,7 +19,7 @@ public class User {
         this.address = builder.address;
     }
 
-    // All getter, and NO setter to provide immutability
+    // All getter, and NO setter to provide immutability - an object whose state cannot be modified after it is created
     public String getFirstName() {
         return firstName;
     }
