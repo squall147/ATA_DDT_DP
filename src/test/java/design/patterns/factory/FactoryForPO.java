@@ -1,7 +1,7 @@
-package factory;
+package design.patterns.factory;
 
-import factory.page.LoginPage;
-import factory.page.SomeOtherPage;
+import design.patterns.factory.page.LoginPage;
+import design.patterns.factory.page.SomeOtherPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 

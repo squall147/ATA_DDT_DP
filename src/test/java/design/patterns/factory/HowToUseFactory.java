@@ -1,4 +1,4 @@
-package factory;
+package design.patterns.factory;
 
 import org.junit.After;
 import org.junit.Before;

@@ -1,10 +1,10 @@
-package builder;
+package design.patterns.builder;
 
 /**
  * Created by Robert_Kaszubowski on 11/21/2016.
  */
 public class User {
-    //All final attributes
+    // All final attributes
     private final String firstName; // required
     private final String lastName; // required
     private final int age; // optional
@@ -19,7 +19,7 @@ public class User {
         this.address = builder.address;
     }
 
-    //All getter, and NO setter to provide immutability
+    // All getter, and NO setter to provide immutability
     public String getFirstName() {
         return firstName;
     }
@@ -72,7 +72,7 @@ public class User {
             return this;
         }
 
-        //Return the finally constructed User object
+        // Return the finally constructed User object
         public User build() {
             User user = new User(this);
             validateUserObject(user);
@@ -80,8 +80,8 @@ public class User {
         }
 
         private void validateUserObject(User user) {
-            //Do some basic validations to check
-            //if user object does not break any assumption of system
+            // Do some basic validations to check
+            // if user object does not break any assumption of system
         }
     }
 }

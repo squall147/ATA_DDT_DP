@@ -1,4 +1,4 @@
-package factory.page;
+package design.patterns.factory.page;
 
 /**
  * Created by Robert_Kaszubowski on 11/21/2016.
