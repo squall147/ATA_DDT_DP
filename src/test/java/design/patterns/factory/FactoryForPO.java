@@ -16,7 +16,6 @@ public class FactoryForPO {
     private SomeOtherPage someOtherPage;
 
     public FactoryForPO(WebDriver driver) {
-        super();
         this.driver = driver;
     }
 
